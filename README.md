@@ -20,34 +20,41 @@
 - ติดตั้ง Docker และ Docker Compose (หรือ Docker Desktop ที่มี Compose)
 - พื้นที่ดิสก์เพียงพอสำหรับไฟล์ข้อมูล MySQL
 
-เริ่มใช้งาน (Quick start)
-1. เปลี่ยนไปที่โฟลเดอร์ `example`
+## Workshop — ตัวอย่างเว็บ (client + server)
+
+- ตำแหน่ง: `workshop/`
+- โครงสร้างย่อย:
+	- `workshop/client` : เว็บหน้า frontend แบบ static (ไฟล์ `index.html`, `index.js`, `style.css`, `user.html`, `user.js`)
+	- `workshop/server` : แอพ Node.js (Express) ที่ให้ API สำหรับจัดการ `users` และให้บริการไฟล์ static ของ `client`
+
+คำอธิบายสั้น ๆ:
+- แอพตัวอย่างนี้ประกอบด้วย frontend แบบ static ที่ส่งคำขอไปยัง backend (ฐานข้อมูล MySQL) เพื่อสร้าง/อ่าน/แก้ไข/ลบ user
+- backend ใช้ MySQL container (กำหนดใน `workshop/server/docker-compose.yml`) และเปิดพอร์ต `8000` สำหรับ API
+
+เรียกใช้งานแบบรวดเร็ว (ด้วย Docker Compose)
+
+1. เข้าไปที่โฟลเดอร์ `workshop/server`
 
 ```bash
-cd example
+cd workshop/server
 ```
 
-2. เรียกใช้ Docker Compose (สร้าง image ถ้าจำเป็น และรันเป็น background)
+2. สร้างและรัน container (จะสร้าง `node-server`, `db` และ `phpmyadmin` ตามคอนฟิก)
 
 ```bash
 docker compose up -d --build
 ```
 
-3. ดู logs ของบริการ
+3. เปิดเว็บตัวอย่าง
+- Frontend (จาก container node): http://localhost:8000/
+- phpMyAdmin: http://localhost:8080/ (user: `root`, password: `root` ตามคอนฟิก)
 
-```bash
-docker compose logs -f
-```
-
-4. หยุดและลบคอนเทนเนอร์ (เมื่อเลิกใช้งาน)
+4. หยุดและลบคอนเทนเนอร์เมื่อเสร็จ
 
 ```bash
 docker compose down
 ```
 
-การใช้งานเพิ่มเติม
-- หากต้องการเชื่อมต่อเข้า MySQL จากเครื่อง host ให้ดูการตั้งค่า port ใน `example/docker-compose.yml` (ปกติจะเป็น `3306:3306`)
-- หากต้องการรีสโตร์ข้อมูลโดยใช้โฟลเดอร์ `example/data` ให้แน่ใจว่า permission และ ownership ของไฟล์ถูกต้องสำหรับ user ที่รัน MySQL
-
 อ้างอิง
 - บทความต้นฉบับที่เป็นแนวทาง: https://docs.mikelopster.dev/c/basic/docker/intro
+
