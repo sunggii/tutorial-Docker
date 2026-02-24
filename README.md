@@ -21,7 +21,6 @@
 - พื้นที่ดิสก์เพียงพอสำหรับไฟล์ข้อมูล MySQL
 
 ## Workshop — ตัวอย่างเว็บ (client + server)
-ตัวอย่างเว็บ: [go to site](https://powerful-cyan-tvgn1xakgz.edgeone.app/)
 - ตำแหน่ง: `workshop/`
 - โครงสร้างย่อย:
 	- `workshop/client` : เว็บหน้า frontend แบบ static (ไฟล์ `index.html`, `index.js`, `style.css`, `user.html`, `user.js`)
