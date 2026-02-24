@@ -16,7 +16,7 @@ body{
 /* Wider container for pages that need more horizontal space (user list) */
 .container.wide{
     max-width: none;
-    width: 60%;
+    width: 80%;
     padding-left: 24px;
     padding-right: 24px;
 }

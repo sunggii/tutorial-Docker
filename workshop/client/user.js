@@ -18,7 +18,12 @@ const loadData = async () => {
                 <tr>
                     <th style="width:60px">ID</th>
                     <th>Name</th>
-                    <th style="width:160px">Actions</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Interest</th>
+                    <th>Description</th>
+
+                    <th style="text-align:left">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,7 +35,12 @@ const loadData = async () => {
                     <tr>
                         <td>${user.id}</td>
                         <td>${user.firstname} ${user.lastname}</td>
-                        <td class="user-actions-cell">
+                        <td>${user.age}</td>
+                        <td>${user.gender}</td>
+                        <td>${user.interests}</td>
+                        <td>${user.description}</td>
+
+                        <td class="user-actions-cell" style="text-align:left; padding-left:8px">
                             <a href='index.html?id=${user.id}'><button class="btn-edit">Edit</button></a>
                             <button class='delete' data-id='${user.id}'>Delete</button>
                         </td>
