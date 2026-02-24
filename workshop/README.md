@@ -1,5 +1,6 @@
-# Workshop — ตัวอย่างแอพ (Client + Server)
-ตัวอย่างเว็บ: [go to site](https://powerful-cyan-tvgn1xakgz.edgeone.app/)
+# Workshop — ตัวอย่างเว็บพื้นฐาน (Client + Server)
+![ex_docker](https://github.com/user-attachments/assets/4a66239f-7cce-4d0a-9547-d3846d7695e9)
+
 - โฟลเดอร์ `workshop` เป็นตัวอย่างโปรเจคขนาดเล็กประกอบด้วย frontend แบบ static (HTML/JS/CSS) และ backend แบบ Node.js (Express) ที่เชื่อมต่อกับ MySQL
 - ใช้เพื่อสาธิตการพัฒนาเว็บแบบเต็มสแตก, การเชื่อมต่อฐานข้อมูล และการรันด้วย Docker Compose
 
